@@ -12,17 +12,39 @@ if (isset($_POST['livro_create'])) {
     $descricao = mysqli_real_escape_string($conn, trim($_POST['descricao']));
     $data_cadastro = mysqli_real_escape_string($conn, trim($_POST['data_cadastro']));
 
+    // Tratar campos numéricos vazios
+    if ($ano_publicacao === '')
+        $ano_publicacao = "NULL";
+    if ($quantidade === '')
+        $quantidade = "NULL";
+    if ($data_cadastro === '')
+        $data_cadastro = "NULL";
+    else
+        $data_cadastro = "'$data_cadastro'";
 
-    $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora, categoria, quantidade, descricao, data_cadastro)
-      VALUES ('$titulo', '$autor','$ano_publicacao','$editora','$categoria','$quantidade','$descricao','$data_cadastro')";
-
-     if (mysqli_query($conn, $sql)) {
-        // Livro adicionado com sucesso → cria mensagem na sessão
-        $_SESSION['mensagem'] = "Livro adicionado com sucesso!";
-        header("Location: index.php");
-        exit();
+    // ===============================
+    // VALIDAÇÃO DE CAMPOS OBRIGATÓRIOS
+    // ===============================
+    if (empty($titulo) || empty($autor) || $ano_publicacao === "NULL" || empty($editora) || empty($categoria) || $quantidade === "NULL") {
+        $_SESSION['mensagem'] = "Erro: preencha todos os campos obrigatórios!";
+        $_SESSION['mensagem_tipo'] = "danger";
     } else {
-        echo "Erro ao adicionar livro: " . mysqli_error($conn);
+        // ===============================
+        // INSERÇÃO NO BANCO
+        // ===============================
+        $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora, categoria, quantidade, descricao, data_cadastro)
+                VALUES ('$titulo', '$autor', $ano_publicacao, '$editora', '$categoria', $quantidade, '$descricao', $data_cadastro)";
+
+        if (mysqli_query($conn, $sql)) {
+            $_SESSION['mensagem'] = "Livro adicionado com sucesso!";
+            $_SESSION['mensagem_tipo'] = "success";
+        } else {
+            $_SESSION['mensagem'] = "Erro ao adicionar livro!";
+            $_SESSION['mensagem_tipo'] = "danger";
+        }
     }
+
+    header("Location: index.php");
+    exit();
 }
 ?>
