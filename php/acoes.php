@@ -16,10 +16,11 @@ if (isset($_POST['livro_create'])) {
     $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora, categoria, quantidade, descricao, data_cadastro)
       VALUES ('$titulo', '$autor','$ano_publicacao','$editora','$categoria','$quantidade','$descricao','$data_cadastro')";
 
-    if (mysqli_query($conn, $sql)) {
-        // Livro adicionado com sucesso → redireciona
+     if (mysqli_query($conn, $sql)) {
+        // Livro adicionado com sucesso → cria mensagem na sessão
+        $_SESSION['mensagem'] = "Livro adicionado com sucesso!";
         header("Location: index.php");
-        exit(); // importante
+        exit();
     } else {
         echo "Erro ao adicionar livro: " . mysqli_error($conn);
     }
