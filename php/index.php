@@ -1,3 +1,8 @@
+<?php
+session_start();
+require 'conexao.php';
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -11,6 +16,7 @@
 
 <body>
   <?php include('navbar.php'); ?>
+  <?php include('mensagem.php'); ?>
   <div class="container mt-4">
     <div class="row">
       <div class="col-md-12">
@@ -50,7 +56,8 @@
                     <a href="" class="btn btn-sm" style="background-color: #406882; color: #fff;">Vizualizar</a>
                     <a href="" class="btn btn-sm" style="background-color: #6998AB; color: #fff;">Editar</a>
                     <form action="" method="POST" class="d-inline">
-                      <button type="submit" name="delete_livro" value="1" class="btn btn-sm" style="background-color: #B85042; color: #fff;">
+                      <button type="submit" name="delete_livro" value="1" class="btn btn-sm"
+                        style="background-color: #B85042; color: #fff;">
                         Excluir
                       </button>
                     </form>
