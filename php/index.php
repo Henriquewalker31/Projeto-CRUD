@@ -21,6 +21,44 @@
                 livros</a>
             </h4>
           </div>
+          <div class="card-body" style="background-color: #f8f9fa;">
+            <table class="table table-bordered table-hover align-middle shadow-sm">
+              <thead class="table-dark" style="background-color: #1A374D;">
+                <tr>
+                  <th>ID</th>
+                  <th>titulo</th>
+                  <th>ano_publicacao</th>
+                  <th>editora</th>
+                  <th>categoria</th>
+                  <th>quantidade</th>
+                  <th>descricao</th>
+                  <th>data_cadastro</th>
+                  <th>acoes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>harry potter</td>
+                  <td>2002</td>
+                  <td>fantasia</td>
+                  <td>2</td>
+                  <td>aaa</td>
+                  <td>bbb</td>
+                  <td>07/11/25</td>
+                  <td>
+                    <a href="" class="btn btn-sm" style="background-color: #406882; color: #fff;">Vizualizar</a>
+                    <a href="" class="btn btn-sm" style="background-color: #6998AB; color: #fff;">Editar</a>
+                    <form action="" method="POST" class="d-inline">
+                      <button type="submit" name="delete_livro" value="1" class="btn btn-sm" style="background-color: #B85042; color: #fff;">
+                        Excluir
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
