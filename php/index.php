@@ -33,11 +33,12 @@ require 'conexao.php';
                 <tr>
                   <th>ID</th>
                   <th>titulo</th>
+                  <th>autor</th>
                   <th>ano_publicacao</th>
                   <th>editora</th>
                   <th>categoria</th>
                   <th>quantidade</th>
-                  <th>descricao</th>
+                  <th>preco</th>
                   <th>data_cadastro</th>
                   <th>acoes</th>
                 </tr>
@@ -52,16 +53,19 @@ require 'conexao.php';
                     ?>
                     <tr>
                       <td><?= $livro['id'] ?></td>
-                      <td><?= htmlspecialchars($livro['titulo'] ??'') ?></td>
-                      <td><?= htmlspecialchars($livro['ano_publicacao'] ??'') ?></td>
-                      <td><?= htmlspecialchars($livro['editora'] ??'') ?></td>
-                      <td><?= htmlspecialchars($livro['categoria'] ??'') ?></td>
-                      <td><?= htmlspecialchars($livro['quantidade'] ??'') ?></td>
-                      <td><?= htmlspecialchars($livro['descricao'] ??'') ?></td>
-                      <td><?= htmlspecialchars($livro['data_cadastro'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['titulo'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['autor'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['ano_publicacao'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['editora'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['categoria'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['quantidade'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['preco'] ?? '') ?></td>
+                      <td><?= htmlspecialchars($livro['data_cadastro'] ?? '') ?></td>
                       <td>
-                        <a href="" class="btn btn-sm" style="background-color: #406882; color: #fff;">Vizualizar</a>
-                        <a href="" class="btn btn-sm" style="background-color: #6998AB; color: #fff;">Editar</a>
+                        <a href="livro-view.php?id=<?= $livro['id'] ?>" class="btn btn-sm"
+                          style="background-color: #406882; color: #fff;">Vizualizar</a>
+                        <a href="livro-edit.php?id=<?= $livro['id'] ?>" class="btn btn-sm"
+                          style="background-color: #6998AB; color: #fff;">Editar</a>
                         <form action="" method="POST" class="d-inline">
                           <button type="submit" name="delete_livro" value="<?= $livro['id'] ?>" class="btn btn-sm"
                             style="background-color: #B85042; color: #fff;">
@@ -76,7 +80,6 @@ require 'conexao.php';
                   echo '<tr><td colspan="9"><h5 class="text-center">Nenhum livro encontrado</h5></td></tr>';
                 }
                 ?>
-
               </tbody>
             </table>
           </div>
