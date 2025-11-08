@@ -38,6 +38,7 @@ require 'conexao.php';
                             }
                         ?>
                         <form action="acoes.php" method="POST">
+                            <input type="hidden" name="livro_id" value="<?=$livro['id']?>">
                             <div class="mb-3">
                                 <label>Titulo</label>
                                 <input type="text" name="titulo" value="<?=$livro['titulo']?>"class="form-control">
@@ -79,7 +80,7 @@ require 'conexao.php';
                             </div>
                             
                             <div class="mb-3">
-                                <button type="submit" name="livro_create" class="btn btn-primary">Salvar</button>
+                                <button type="submit" name="livro_update" class="btn btn-primary">Salvar</button>
                             </div>
                         </form>
                         <?php 
