@@ -43,26 +43,40 @@ require 'conexao.php';
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>harry potter</td>
-                  <td>2002</td>
-                  <td>fantasia</td>
-                  <td>2</td>
-                  <td>aaa</td>
-                  <td>bbb</td>
-                  <td>07/11/25</td>
-                  <td>
-                    <a href="" class="btn btn-sm" style="background-color: #406882; color: #fff;">Vizualizar</a>
-                    <a href="" class="btn btn-sm" style="background-color: #6998AB; color: #fff;">Editar</a>
-                    <form action="" method="POST" class="d-inline">
-                      <button type="submit" name="delete_livro" value="1" class="btn btn-sm"
-                        style="background-color: #B85042; color: #fff;">
-                        Excluir
-                      </button>
-                    </form>
-                  </td>
-                </tr>
+                <?php
+                $sql = 'SELECT * FROM livros';
+                $livros = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($livros) > 0) {
+                  while ($livro = mysqli_fetch_assoc($livros)) {
+                    ?>
+                    <tr>
+                      <td><?= $livro['id'] ?></td>
+                      <td><?= htmlspecialchars($livro['titulo'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['ano_publicacao'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['editora'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['categoria'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['quantidade'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['descricao'] ??'') ?></td>
+                      <td><?= htmlspecialchars($livro['data_cadastro'] ??'') ?></td>
+                      <td>
+                        <a href="" class="btn btn-sm" style="background-color: #406882; color: #fff;">Vizualizar</a>
+                        <a href="" class="btn btn-sm" style="background-color: #6998AB; color: #fff;">Editar</a>
+                        <form action="" method="POST" class="d-inline">
+                          <button type="submit" name="delete_livro" value="<?= $livro['id'] ?>" class="btn btn-sm"
+                            style="background-color: #B85042; color: #fff;">
+                            Excluir
+                          </button>
+                        </form>
+                      </td>
+                    </tr>
+                    <?php
+                  }
+                } else {
+                  echo '<tr><td colspan="9"><h5 class="text-center">Nenhum livro encontrado</h5></td></tr>';
+                }
+                ?>
+
               </tbody>
             </table>
           </div>
