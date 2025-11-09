@@ -50,7 +50,7 @@ if (isset($_POST['livro_create'])) {
 
 if (isset($_POST['livro_update'])) {
     $livro_id = mysqli_real_escape_string($conn, $_POST['livro_id']);
-    
+
     $titulo = mysqli_real_escape_string($conn, trim($_POST['titulo']));
     $autor = mysqli_real_escape_string($conn, trim($_POST['autor']));
     $ano_publicacao = mysqli_real_escape_string($conn, trim($_POST['ano_publicacao']));
@@ -80,14 +80,15 @@ if (isset($_POST['livro_update'])) {
         
         // INSERÇÃO NO BANCO
         
-        $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora, categoria, quantidade, preco, data_cadastro)
-                VALUES ('$titulo', '$autor', $ano_publicacao, '$editora', '$categoria', $quantidade, $preco, $data_cadastro)";
+        $sql = " UPDATE livros SET titulo = '$titulo', autor = '$autor', ano_publicacao = $ano_publicacao , editora = '$editora', categoria = '$categoria', quantidade = $quantidade, preco = $preco, data_cadastro = $data_cadastro";
 
+        $sql .= " WHERE id = '$livro_id'";
+        
         if (mysqli_query($conn, $sql)) {
-            $_SESSION['mensagem'] = "Livro adicionado com sucesso!";
+            $_SESSION['mensagem'] = "Livro atualizado com sucesso!";
             $_SESSION['mensagem_tipo'] = "success";
         } else {
-            $_SESSION['mensagem'] = "Erro ao adicionar livro!";
+            $_SESSION['mensagem'] = "Erro ao atualizar livro!";
             $_SESSION['mensagem_tipo'] = "danger";
         }
     }
@@ -95,4 +96,23 @@ if (isset($_POST['livro_update'])) {
     header("Location: index.php");
     exit();
 }
+
+if (isset($_POST['delete_livro'])) {
+    $livro_id = mysqli_real_escape_string($conn, $_POST['delete_livro']);
+    
+    $sql = "DELETE FROM livros WHERE id = '$livro_id'";
+    mysqli_query($conn, $sql);
+
+    if (mysqli_affected_rows($conn) > 0){
+        $_SESSION['message'] = 'Livro deletado com sucesso';
+        header('Location: index.php');
+        exit;
+    } else {
+        $_SESSION['message'] = 'Livro não foi deletado';
+        header('Location: index.php');
+    }
+}
+
+
+
 ?>
