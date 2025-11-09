@@ -27,54 +27,50 @@
                                 <input type="text" name="titulo" class="form-control">
                             </div>
 
-
                             <div class="mb-3">
                                 <label>Autor</label>
                                 <input type="text" name="autor" class="form-control">
                             </div>
-                        
 
-                        <div class="mb-3">
-                            <label>Ano de Publicação</label>
-                            <input type="number" name="ano_publicacao" class="form-control">
-                        </div>
+                            <div class="mb-3">
+                                <label>Ano de Publicação</label>
+                                <input type="number" name="ano_publicacao" class="form-control">
+                            </div>
 
+                            <div class="mb-3">
+                                <label>Editora</label>
+                                <input type="text" name="editora" class="form-control">
+                            </div>
 
-                        <div class="mb-3">
-                            <label>Editora</label>
-                            <input type="text" name="editora" class="form-control">
-                        </div>
+                            <div class="mb-3">
+                                <label>Categoria</label>
+                                <input type="text" name="categoria" class="form-control">
+                            </div>
 
-                        <div class="mb-3">
-                            <label>Categoria</label>
-                            <input type="text" name="categoria" class="form-control">
-                        </div>
+                            <div class="mb-3">
+                                <label>Quantidade</label>
+                                <input type="number" name="quantidade" class="form-control">
+                            </div>
 
-                        <div class="mb-3">
-                            <label>Quantidade</label>
-                            <input type="number" name="quantidade" class="form-control">
-                        </div>
+                            <div class="mb-3">
+                                <label>Preco</label>
+                                <input type="number" step="0.01" name="preco" class="form-control" required>
+                            </div>
 
-                        <div class="mb-3">
-                            <label>Descrição</label>
-                            <textarea name="descricao" class="form-control"></textarea>
-                        </div>
-
-                        <div class="mb-3">
-                            <label>Data de Cadastro</label>
-                            <input type="date" name="data_cadastro" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" name="livro_create" class="btn btn-primary">Salvar</button>
-
-                        </div>
+                            <div class="mb-3">
+                                <label>Data de Cadastro</label>
+                                <input type="date" name="data_cadastro" class="form-control">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <button type="submit" name="livro_create" class="btn btn-primary">Salvar</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
