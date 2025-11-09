@@ -24,13 +24,13 @@ require 'conexao.php';
         <div class="card bg-white text-dark border-0 shadow">
           <div class="header card-header bg-dark text-light">
             <h4>Livros
-              <a href="livro-create.php" class="btn text-white float-end" style="background-color: #1A374D;">Adicionar
+              <a href="livro-create.php" class="btn text-white float-end" style="background-color: #34576eff;">Adicionar
                 livros</a>
             </h4>
           </div>
           <div class="card-body" style="background-color: #f8f9fa;">
             <table class="table table-bordered table-hover align-middle shadow-sm">
-              <thead class="table-dark" style="background-color: #1A374D;">
+              <thead class="table-dark" style="background-color: #1A374D">
                 <tr>
                   <th>ID</th>
                   <th>Titulo</th>
@@ -97,3 +97,4 @@ require 'conexao.php';
 </body>
 
 </html>
+// atualização para commit
