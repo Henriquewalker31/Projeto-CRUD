@@ -12,6 +12,7 @@ require 'conexao.php';
   <title>Livraria</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -32,15 +33,15 @@ require 'conexao.php';
               <thead class="table-dark" style="background-color: #1A374D;">
                 <tr>
                   <th>ID</th>
-                  <th>titulo</th>
-                  <th>autor</th>
-                  <th>ano_publicacao</th>
-                  <th>editora</th>
-                  <th>categoria</th>
-                  <th>quantidade</th>
-                  <th>preco</th>
-                  <th>data_cadastro</th>
-                  <th>acoes</th>
+                  <th>Titulo</th>
+                  <th>Autor</th>
+                  <th>Ano_Publição</th>
+                  <th>Editora</th>
+                  <th>Categoria</th>
+                  <th>Quantidade</th>
+                  <th>Preço</th>
+                  <th>Data_Cadastro</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
               <tbody>
@@ -63,13 +64,16 @@ require 'conexao.php';
                       <td><?= htmlspecialchars($livro['data_cadastro'] ?? '') ?></td>
                       <td>
                         <a href="livro-view.php?id=<?= $livro['id'] ?>" class="btn btn-sm"
-                          style="background-color: #406882; color: #fff;">Vizualizar</a>
+                          style="background-color: #406882; color: #fff;"><span class="bi-eye-fill
+                          "></span>&nbsp;Vizualizar</a>
                         <a href="livro-edit.php?id=<?= $livro['id'] ?>" class="btn btn-sm"
-                          style="background-color: #6998AB; color: #fff;">Editar</a>
-                        <form action="" method="POST" class="d-inline">
+                          style="background-color: #6998AB; color: #fff;"><span class="bi-pencil-fill
+                          "></span>&nbsp;Editar</a>
+                        <form action="acoes.php" method="POST" class="d-inline">
                           <button type="submit" name="delete_livro" value="<?= $livro['id'] ?>" class="btn btn-sm"
                             style="background-color: #B85042; color: #fff;">
-                            Excluir
+                            <span class="bi-trash3-fill
+                          "></span>&nbsp;Excluir
                           </button>
                         </form>
                       </td>
