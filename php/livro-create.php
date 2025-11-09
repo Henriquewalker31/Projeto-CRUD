@@ -61,7 +61,7 @@
                                 <label>Data de Cadastro</label>
                                 <input type="date" name="data_cadastro" class="form-control">
                             </div>
-                            
+
                             <div class="mb-3">
                                 <button type="submit" name="livro_create" class="btn btn-primary">Salvar</button>
                             </div>
@@ -79,4 +79,3 @@
 
 
 </html>
-

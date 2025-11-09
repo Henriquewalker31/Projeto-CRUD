@@ -22,16 +22,16 @@ if (isset($_POST['livro_create'])) {
     else
         $data_cadastro = "'$data_cadastro'";
 
-   
+
     // VALIDAÇÃO DE CAMPOS OBRIGATÓRIOS
-    
+
     if (empty($titulo) || empty($autor) || $ano_publicacao === "NULL" || empty($editora) || empty($categoria) || $quantidade === "NULL") {
         $_SESSION['mensagem'] = "Erro: preencha todos os campos obrigatórios!";
         $_SESSION['mensagem_tipo'] = "danger";
     } else {
-        
+
         // INSERÇÃO NO BANCO
-        
+
         $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora, categoria, quantidade, preco, data_cadastro)
                 VALUES ('$titulo', '$autor', $ano_publicacao, '$editora', '$categoria', $quantidade, $preco, $data_cadastro)";
 
@@ -70,20 +70,20 @@ if (isset($_POST['livro_update'])) {
     else
         $data_cadastro = "'$data_cadastro'";
 
-   
+
     // VALIDAÇÃO DE CAMPOS OBRIGATÓRIOS
-    
+
     if (empty($titulo) || empty($autor) || $ano_publicacao === "NULL" || empty($editora) || empty($categoria) || $quantidade === "NULL") {
         $_SESSION['mensagem'] = "Erro: preencha todos os campos obrigatórios!";
         $_SESSION['mensagem_tipo'] = "danger";
     } else {
-        
+
         // INSERÇÃO NO BANCO
-        
+
         $sql = " UPDATE livros SET titulo = '$titulo', autor = '$autor', ano_publicacao = $ano_publicacao , editora = '$editora', categoria = '$categoria', quantidade = $quantidade, preco = $preco, data_cadastro = $data_cadastro";
 
         $sql .= " WHERE id = '$livro_id'";
-        
+
         if (mysqli_query($conn, $sql)) {
             $_SESSION['mensagem'] = "Livro atualizado com sucesso!";
             $_SESSION['mensagem_tipo'] = "success";
@@ -99,11 +99,11 @@ if (isset($_POST['livro_update'])) {
 
 if (isset($_POST['delete_livro'])) {
     $livro_id = mysqli_real_escape_string($conn, $_POST['delete_livro']);
-    
+
     $sql = "DELETE FROM livros WHERE id = '$livro_id'";
     mysqli_query($conn, $sql);
 
-    if (mysqli_affected_rows($conn) > 0){
+    if (mysqli_affected_rows($conn) > 0) {
         $_SESSION['message'] = 'Livro deletado com sucesso';
         header('Location: index.php');
         exit;

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'conexao.php';
 ?>
@@ -27,68 +27,73 @@ require 'conexao.php';
                         </h4>
                     </div>
                     <div class="card-body">
-                        <?php 
-                        if (isset($_GET['id'])){
+                        <?php
+                        if (isset($_GET['id'])) {
                             $livro_id = mysqli_real_escape_string($conn, $_GET['id']);
                             $sql = "SELECT * FROM livros WHERE id='$livro_id'";
                             $query = mysqli_query($conn, $sql);
 
-                            if(mysqli_num_rows($query) > 0){
+                            if (mysqli_num_rows($query) > 0) {
                                 $livro = mysqli_fetch_array($query);
                             }
-                        ?>
-                        <form action="acoes.php" method="POST">
-                            <input type="hidden" name="livro_id" value="<?=$livro['id']?>">
-                            <div class="mb-3">
-                                <label>Titulo</label>
-                                <input type="text" name="titulo" value="<?=$livro['titulo']?>"class="form-control">
-                            </div>
+                            ?>
+                            <form action="acoes.php" method="POST">
+                                <input type="hidden" name="livro_id" value="<?= $livro['id'] ?>">
+                                <div class="mb-3">
+                                    <label>Titulo</label>
+                                    <input type="text" name="titulo" value="<?= $livro['titulo'] ?>" class="form-control">
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Autor</label>
-                                <input type="text" name="autor" value="<?=$livro['autor']?>" class="form-control">
-                            </div>
+                                <div class="mb-3">
+                                    <label>Autor</label>
+                                    <input type="text" name="autor" value="<?= $livro['autor'] ?>" class="form-control">
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Ano de Publicação</label>
-                                <input type="number" name="ano_publicacao" value="<?=$livro['ano_publicacao']?>" class="form-control">
-                            </div>
+                                <div class="mb-3">
+                                    <label>Ano de Publicação</label>
+                                    <input type="number" name="ano_publicacao" value="<?= $livro['ano_publicacao'] ?>"
+                                        class="form-control">
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Editora</label>
-                                <input type="text" name="editora" value="<?=$livro['editora']?>" class="form-control">
-                            </div>
+                                <div class="mb-3">
+                                    <label>Editora</label>
+                                    <input type="text" name="editora" value="<?= $livro['editora'] ?>" class="form-control">
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Categoria</label>
-                                <input type="text" name="categoria" value="<?=$livro['categoria']?>" class="form-control">
-                            </div>
+                                <div class="mb-3">
+                                    <label>Categoria</label>
+                                    <input type="text" name="categoria" value="<?= $livro['categoria'] ?>"
+                                        class="form-control">
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Quantidade</label>
-                                <input type="number" name="quantidade" value="<?=$livro['quantidade']?>" class="form-control">
-                            </div>
+                                <div class="mb-3">
+                                    <label>Quantidade</label>
+                                    <input type="number" name="quantidade" value="<?= $livro['quantidade'] ?>"
+                                        class="form-control">
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Preco</label>
-                                <input type="number" step="0.01" name="preco" value="<?=$livro['preco']?>" class="form-control" required>
-                            </div>
+                                <div class="mb-3">
+                                    <label>Preco</label>
+                                    <input type="number" step="0.01" name="preco" value="<?= $livro['preco'] ?>"
+                                        class="form-control" required>
+                                </div>
 
-                            <div class="mb-3">
-                                <label>Data de Cadastro</label>
-                                <input type="date" name="data_cadastro" value="<?=$livro['data_cadastro']?>" class="form-control">
-                            </div>
-                            
-                            <div class="mb-3">
-                                <button type="submit" name="livro_update" class="btn btn-primary">Salvar</button>
-                            </div>
-                        </form>
-                        <?php 
-                        } else{
+                                <div class="mb-3">
+                                    <label>Data de Cadastro</label>
+                                    <input type="date" name="data_cadastro" value="<?= $livro['data_cadastro'] ?>"
+                                        class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <button type="submit" name="livro_update" class="btn btn-primary">Salvar</button>
+                                </div>
+                            </form>
+                            <?php
+                        } else {
                             echo "<h5>Livro não encontrado</h5>";
                         }
-                    
-                    ?>
+
+                        ?>
                     </div>
                 </div>
             </div>
@@ -99,4 +104,5 @@ require 'conexao.php';
         crossorigin="anonymous"></script>
 </body>
 <!-- atualização para commit -->
+
 </html>

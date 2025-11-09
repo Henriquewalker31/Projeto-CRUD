@@ -71,4 +71,5 @@ require 'conexao.php';
         crossorigin="anonymous"></script>
 </body>
 <!-- atualização para commit -->
+
 </html>
