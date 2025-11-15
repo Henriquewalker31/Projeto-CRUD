@@ -22,6 +22,7 @@ Back-end
 -CSS + JavaScript para elementos dinâmicos e estilização personalizada
 
 🐳 Ambiente de Desenvolvimento
+
 O projeto foi originalmente desenvolvido no Laragon, mas devido a conflitos de portas e problemas com XAMPP/Laragon, foi migrado para Docker.
 
 Para isso, foi necessário:
