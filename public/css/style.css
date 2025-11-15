@@ -1,0 +1,67 @@
+html body {
+  background-color: #dce6f1;
+}
+
+/* Botões tabela */
+.btn-vizualizar {
+  background-color: #3b6aa0;
+  color: #fff;
+  
+
+}
+.btn-vizualizar:hover {
+  background-color: #2f5280;
+}
+
+.btn-editar {
+  background-color: #5d8aa8;
+  color: #fff;
+
+}
+.btn-editar:hover {
+  background-color: #4a6d88;
+}
+
+.btn-excluir {
+  background-color: #d9534f;
+  color: #fff;
+  
+}
+.btn-excluir:hover {
+  background-color: #c12f2b;
+}
+
+/* Cor de fundo */
+#deleteModal .modal-content {
+  background-color: #272727; /* azul da navbar */
+  color: #fff; /* texto branco */
+  border-radius: 10px; /* bordas arredondadas */
+}
+
+/* Cabeçalho */
+#deleteModal .modal-header {
+  border-bottom: 1px solid #545555;
+}
+
+/* Rodapé */
+#deleteModal .modal-footer {
+  border-top: 1px solid #515152;
+}
+
+/* Cancelar */
+#deleteModal .btn-secondary {
+  background-color: #1f4f85; /* cinza */
+  color: #fff;
+}
+#deleteModal .btn-secondary:hover {
+  background-color: #0e2952;
+}
+
+/* Botão Excluir */
+#deleteModal .btn-danger {
+  background-color: #b85042; /* vermelho igual ao botão de excluir */
+  color: #fff;
+}
+#deleteModal .btn-danger:hover {
+  background-color: #9c3b2f; /* vermelho escuro */
+}
