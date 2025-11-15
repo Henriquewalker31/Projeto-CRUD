@@ -22,4 +22,9 @@ Back-end
 -CSS + JavaScript para elementos dinâmicos e estilização personalizada
 
 🐳 Ambiente de Desenvolvimento
--Docker para padronização e facilidade de deploy
+O projeto foi originalmente desenvolvido no Laragon, mas devido a conflitos de portas e problemas com XAMPP/Laragon, foi migrado para Docker.
+
+Para isso, foi necessário:
+-Configurar uma máquina virtual Ubuntu no Windows.
+-Ajustar o projeto para rodar dentro de containers Docker, garantindo isolamento e portabilidade.
+-Essa mudança facilita o deploy em diferentes máquinas sem conflitos de ambiente e mantém o projeto 100% funcional.
