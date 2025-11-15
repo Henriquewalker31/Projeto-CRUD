@@ -17,7 +17,7 @@ Back-end
 -PHP puro para toda a lógica da aplicação
 -MySQL para armazenamento e gerenciamento dos dados
 
-Front-end
+-Front-end
 -Bootstrap para estruturação visual e responsividade
 -CSS + JavaScript para elementos dinâmicos e estilização personalizada
 
