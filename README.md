@@ -27,5 +27,7 @@ O projeto foi originalmente desenvolvido no Laragon, mas devido a conflitos de p
 
 Para isso, foi necessário:
 -Configurar uma máquina virtual Ubuntu no Windows.
+
 -Ajustar o projeto para rodar dentro de containers Docker, garantindo isolamento e portabilidade.
+
 -Essa mudança facilita o deploy em diferentes máquinas sem conflitos de ambiente e mantém o projeto 100% funcional.
